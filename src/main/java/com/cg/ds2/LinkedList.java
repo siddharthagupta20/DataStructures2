@@ -1,6 +1,6 @@
 package com.cg.ds2;
 
-public class LinkedList<K> {
+public class LinkedList<K extends Comparable<K>> {
 	private INode<K> head;
 	private INode<K> tail;
 	private int length;
