@@ -45,4 +45,10 @@ public class LinkedHashMap<K extends Comparable<K>, V> {
 			mn.setValue(value);
 	}
 
+	public void remove(K key) {
+		INode<K> node = this.list.get(getIndex(key)).search(key);
+		this.list.get(getIndex(key)).pop(node);
+
+	}
+
 }
