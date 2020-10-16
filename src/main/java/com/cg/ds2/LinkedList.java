@@ -47,7 +47,7 @@ public class LinkedList<K extends Comparable<K>> {
 		if (pos > 0 && pos <= length) {
 			int count = 0;
 			INode<K> currentNode = this.head;
-			while (currentNode!=null) {
+			while (currentNode != null) {
 				count++;
 				if (count == pos) {
 					node.setNext(currentNode.getNext());
@@ -70,7 +70,7 @@ public class LinkedList<K extends Comparable<K>> {
 	public void popLast() {
 		INode<K> currentNode = this.head;
 		int count = 0;
-		while (currentNode!=null) {
+		while (currentNode != null) {
 			count++;
 			if (count == (length - 1)) {
 				currentNode.setNext(null);
@@ -81,6 +81,13 @@ public class LinkedList<K extends Comparable<K>> {
 		}
 		length--;
 
+	}
+
+	public void pop(INode<K> node) {
+		INode<K> currentNode = this.head;
+		while (currentNode.getNext() != node) {
+			currentNode.setNext(currentNode.getNext());
+		}
 	}
 
 	public int size() {
