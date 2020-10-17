@@ -11,6 +11,12 @@ public class LinkedHashMap<K extends Comparable<K>, V> {
 	public LinkedHashMap() {
 		list = new ArrayList<LinkedList<K>>();
 		indexes = 11;
+		this.createBucket();
+	}
+
+	public void createBucket() {
+		for (int i = 0; i <= 10; i++)
+			list.add(i, null);
 	}
 
 	public int getIndex(K key) {
